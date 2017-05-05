@@ -53,7 +53,7 @@ class Program
 				Code = "P_A",
 				Discount = 0.1F,
 				Id = 1,
-				Name = "F-15",
+				Name = "ABC",
 				Price = 6000.85m,
 				AvailableDate = DateTime.Now
 			});
@@ -62,7 +62,7 @@ class Program
 			Code = "P_B",
 			Discount = 0.2F,
 			Id = 2,
-			Name = "F-16",
+			Name = "XYZ",
 			Price = 5500.50m,
 			AvailableDate = DateTime.Now.AddDays(-3),
 			IsOffline = true
@@ -72,7 +72,7 @@ class Program
 				Code = "P_C",
 				Discount = 0.22F,
 				Id = 3,
-				Name = "F-22",
+				Name = "123",
 				Price = null,
 				AvailableDate = DateTime.Now.AddDays(-3),
 				IsOffline = true,
@@ -83,12 +83,12 @@ class Program
 			Code = "P_D",
 			Discount = 0.35F,
 			Id = 4,
-			Name = "F-18",
+			Name = "456",
 			Price = 5800.0m,
 			AvailableDate = DateTime.Now.AddDays(-5)
 		});
 
-		string fileName = Path.Combine(Environment.CurrentDirectory, "Test.xlsx");
+		string fileName = Path.Combine(Directory.GetCurrentDirectory(), "Test.xlsx");
 
 		// create .xlsx file as MemoryStream
 		using (MemoryStream ms = ExcelGenerator.CreateStream(products, "Products"))
@@ -109,8 +109,8 @@ class Program
 ## Notes
 - the Index property of ExcelColumnAttribute is used in sorting columns, it's not the column index. so for 3 properties of entity have 1, 2, 5, the third property won't be in the column "E" but the column "C".
 
-## Nuget Package
-`PM> Install-Package RL.ExcelFileGenerator`
+~~## Nuget Package
+`PM> Install-Package RL.ExcelFileGenerator`~~
 
 ## FYI
 ### Predefined number format in Excel
